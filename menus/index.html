@@ -6,12 +6,23 @@
   <title>Menú del Restaurante</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body id="main-body" class="bg-gray-100 text-gray-800 transition-colors duration-300">
   <div class="max-w-3xl mx-auto p-6">
     <header class="text-center mb-8">
-      <h1 id="nombre" class="text-4xl font-bold">Cargando...</h1>
-      <p id="descripcion" class="text-lg text-gray-600 mt-2"></p>
+      <div class="flex justify-between items-center">
+        <h1 id="nombre" class="text-4xl font-bold">Cargando...</h1>
+        <button id="toggle-theme" class="px-4 py-2 text-sm rounded border border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">
+          🌙 Modo oscuro
+        </button>
+      </div>
+      <p id="descripcion" class="text-lg text-gray-600 dark:text-gray-300 mt-2"></p>
     </header>
     <section id="lista-menu" class="space-y-6">
       <!-- Los platos se insertarán aquí -->
@@ -19,4 +30,5 @@
   </div>
   <script src="index.js"></script>
 </body>
+
 </html>
