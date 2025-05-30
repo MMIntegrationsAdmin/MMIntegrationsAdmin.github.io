@@ -32,7 +32,7 @@ async function fetchMenu(id) {
     }
 
     const modeloFinal = menu.modelo === -1 ? (urlModelo || '1') : String(menu.modelo);
-    const modulo = await import(`./viewer/modelo${modeloFinal}.js`);
+    const modulo = await import(`./modelo${modeloFinal}.js`);
     modulo.render(menu, app);
 
   } catch (err) {
