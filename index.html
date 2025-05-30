@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CartaQR - Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
+  <header class="text-center p-6 bg-orange-400 dark:bg-orange-500 relative">
+    <img src="logo.png" alt="CartaQR Logo" class="mx-auto mb-2 w-16 h-16">
+    <h1 class="text-3xl font-bold">CartaQR</h1>
+    <p class="text-lg">Cartas digitales modernas para tu restaurante</p>
+    <div class="absolute top-6 right-6">
+      <select onchange="cambiarIdioma(this.value)" class="bg-white dark:bg-gray-800 text-black dark:text-white px-2 py-1 rounded border shadow">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="it">Italiano</option>
+      </select>
+    </div>
+    <div class="mt-6">
+      <label for="modelo" class="block text-white font-semibold mb-1">Explora una carta real:</label>
+      <select id="modelo" onchange="redirigirModelo(this.value)" class="bg-white dark:bg-gray-800 text-black dark:text-white px-4 py-2 rounded border shadow-md">
+        <option value="">Selecciona un restaurante...</option>
+        <option value="área_ruta_66">Área Ruta 66 (modelo 5)</option>
+        <option value="dulce_tentación">Dulce Tentación (modelo 4)</option>
+        <option value="carnívoro_grill">Carnívoro Grill (modelo 3)</option>
+        <option value="shisha_lounge">Shisha Lounge (modelo 1)</option>
+        <option value="vegan_paradise">Vegan Paradise (modelo 2)</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto p-6 space-y-10">
+    <section class="text-center">
+      <h2 class="text-2xl font-semibold mb-2">¿Qué es CartaQR?</h2>
+      <p>
+        CartaQR es una alternativa moderna y accesible a Smartmenu. Ofrecemos cartas digitales elegantes, rápidas y adaptadas a móvil para restaurantes, cafeterías, bares y más.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold mb-4 text-center">Comparativa de planes</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="border rounded-lg p-4 shadow">
+          <h3 class="text-lg font-bold mb-2">Smartmenu</h3>
+          <ul class="list-disc list-inside">
+            <li>Plan básico: 30 €/mes</li>
+            <li>Plan avanzado: 50 €/mes</li>
+            <li>Plan premium: 90 €/mes</li>
+          </ul>
+        </div>
+        <div class="border rounded-lg p-4 shadow bg-orange-100 dark:bg-orange-700">
+          <h3 class="text-lg font-bold mb-2">CartaQR</h3>
+          <ul class="list-disc list-inside">
+            <li>Plan mensual: <strong>10 €/mes</strong> (carta editable online)</li>
+            <li>PDF personalizado: <strong><a href="#contacto" class="underline">Contactar para más información</a></strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="text-center border rounded-lg p-6 shadow-md">
+      <h2 class="text-xl font-semibold mb-2">Contacto</h2>
+      <p>¿Quieres tu carta en PDF o tienes dudas?</p>
+      <p class="mt-2">
+        Escríbenos por WhatsApp al <strong>722 85 32 02</strong><br>
+        o envíanos un correo a <strong>info@cartaqr.com</strong>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function redirigirModelo(id) {
+      if (id) {
+        window.open(`/menus/viewer?restaurante_id=${id}`, '_blank');
+      }
+    }
+    function cambiarIdioma(lang) {
+    }
+  </script>
+</body>
+</html>
